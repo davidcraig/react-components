@@ -54,16 +54,20 @@ function (_React$Component) {
     key: "getImplicitColumns",
     value: function getImplicitColumns() {
       var columns = {};
-      this.props.items.map(function (i) {
-        Object.keys(i).map(function (col) {
-          if (typeof columns[col] === 'undefined') {
-            columns[col] = {
-              field: col,
-              name: col
-            };
-          }
+
+      if (typeof this.props.items != 'undefined') {
+        this.props.items.map(function (i) {
+          Object.keys(i).map(function (col) {
+            if (typeof columns[col] === 'undefined') {
+              columns[col] = {
+                field: col,
+                name: col
+              };
+            }
+          });
         });
-      });
+      }
+
       var columnArray = [];
       Object.keys(columns).map(function (col) {
         columnArray.push(columns[col]);

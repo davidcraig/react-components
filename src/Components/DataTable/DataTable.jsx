@@ -12,16 +12,19 @@ class DataTable extends React.Component {
 
   getImplicitColumns () {
     let columns = {}
-    this.props.items.map(i => {
-      Object.keys(i).map(col => {
-        if (typeof columns[col] === 'undefined') {
-          columns[col] = {
-            field: col,
-            name: col
+    if (typeof this.props.items != 'undefined') {
+      this.props.items.map(i => {
+        Object.keys(i).map(col => {
+          if (typeof columns[col] === 'undefined') {
+            columns[col] = {
+              field: col,
+              name: col
+            }
           }
-        }
+        })
       })
-    })
+    }
+    
 
     let columnArray = []
     Object.keys(columns).map(col => {
