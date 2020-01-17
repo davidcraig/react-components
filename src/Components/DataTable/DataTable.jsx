@@ -125,7 +125,7 @@ DataTable.propTypes = {
     required: true
   },
   /**
-   * Test
+   * Primary key, required for looping through each object (sets react's `key`).
    */
   primaryKey: {
     type: PropTypes.string,

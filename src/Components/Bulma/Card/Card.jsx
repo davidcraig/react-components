@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import PropTypes from 'prop-types';
 
 export class Card extends React.Component {
   getLink () {
@@ -33,7 +33,7 @@ export class Card extends React.Component {
     fragments.linkCard = ''
 
     if (typeof this.props.url !== 'undefined') {
-      fragments.linkCard = <Link href={link}>{fragments.card}</Link>
+      fragments.linkCard = <a href={link}>{fragments.card}</a>
     }
 
     return fragments[fragment]
@@ -119,4 +119,14 @@ export class Card extends React.Component {
     }
     return ''
   }
+}
+
+Card.propTypes = {
+
+  /**
+   * Card Title
+   */
+  title: {
+    type: PropTypes.string,
+  },
 }
