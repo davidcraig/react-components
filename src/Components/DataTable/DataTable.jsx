@@ -118,19 +118,23 @@ DataTable.propTypes = {
     type: PropTypes.array,
   },
   /**
-   * The items to be shown in the table.
+   * An array of data items to be shown in the table
    */
   items: {
     type: PropTypes.array,
     required: true
+  },
+  /**
+   * Test
+   */
+  primaryKey: {
+    type: PropTypes.string,
+    required: false
   }
 }
 
 DataTable.defaultProps = {
-  /**
-   * Default item key, change this if your items do not have an ID.
-   */
-  primaryKey: 'id' // Primary Key
+  primaryKey: 'id'
 }
 
 export default DataTable
