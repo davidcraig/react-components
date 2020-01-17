@@ -2,9 +2,10 @@
   "name": "@davidcraig/react-components",
   "version": "0.1.0",
   "description": "Reusable unit tested react components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "./node_modules/.bin/babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/davidcraig/react-components#readme",
   "devDependencies": {
+    "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",

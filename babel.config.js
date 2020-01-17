@@ -4,4 +4,8 @@ module.exports = {
     '@babel/preset-env',
     '@babel/preset-react'
   ],
+  ignore: [
+    "**/*.test.js",
+    "**/*.spec.js"
+  ]
 };

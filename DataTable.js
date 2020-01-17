@@ -1,0 +1,1 @@
+module.exports.DataTable = require('./dist/Components/DataTable/DataTable').DataTable
