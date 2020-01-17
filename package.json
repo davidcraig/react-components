@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "@davidcraig/react-components",
   "version": "1.0.0",
   "description": "Reusable unit tested react components",
   "main": "index.js",
