@@ -16,8 +16,11 @@ export const Default = () => (
 
 export const BulmaCard = () => (
   <>
-    <h2>Simple Card (Header and Title)</h2>
-    <code>{`<Card title="Test">`}</code>
-    <Card title="Test" />
+    <h2>Simple Card (Title and Content)</h2>
+    <pre><code style={{ marginBottom: '4px' }}>{`<Card title="Test">This is card Content</Card>`}</code></pre>
+
+    <div style={{ padding: '16px 0' }}>
+      <Card title="Test">This is card Content</Card>
+    </div>
   </>
 )

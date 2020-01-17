@@ -9,16 +9,22 @@ export default {
 
 export const Default = () => (
   <>
-    <h2>DataTable with just columns set</h2>
-    <DataTable columns={[ { name: 'Name' }, { name: 'Age' } ]} />
-    <code>{`<DataTable columns={[ { name: 'Name' }, { name: 'Age' } ]}>`}</code>
+    <div className='content'>
+      <h2>DataTable with just columns set</h2>
 
-    <h2>DataTable with just items set (implicit columns)</h2>
-    <DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} />
-    <code>{`<DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} />`}</code>
+      <div style={{ padding: '16px 0' }}>
+        <DataTable columns={[ { name: 'Name' }, { name: 'Age' } ]} />
+      </div>
 
-    <h2>Full DataTable example</h2>
-    <DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} columns={[ { name: 'Name', field: 'name' } ]} />
-    <code>{`<DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} columns={[ { name: 'Name', field: 'name' } ]} />`}</code>
+      <code>{`<DataTable columns={[ { name: 'Name' }, { name: 'Age' } ]}>`}</code>
+
+      <h2>DataTable with just items set (implicit columns)</h2>
+      <DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} />
+      <code>{`<DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} />`}</code>
+
+      <h2>Full DataTable example</h2>
+      <DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} columns={[ { name: 'Name', field: 'name' } ]} />
+      <code>{`<DataTable items={[ {id: 1, name: 'David'}, {id: 2, name: 'Craig'} ]} columns={[ { name: 'Name', field: 'name' } ]} />`}</code>
+    </div>
   </>
 )
