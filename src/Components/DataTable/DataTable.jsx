@@ -112,7 +112,7 @@ DataTable.propTypes = {
    * An array of columns (objects) with the following properties:
    *
    * - name: 'The display name of the column'
-   * - value: Either the key of a property on item to return or a function returning the value
+   * - field: Either the key of a property on item to return or a function returning the value
    */
   columns: {
     type: PropTypes.array,
