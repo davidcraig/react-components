@@ -168,3 +168,47 @@ function (_React$Component) {
 }(_react["default"].Component);
 
 exports.Card = Card;
+Card.__docgenInfo = {
+  "description": "",
+  "methods": [{
+    "name": "getLink",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "getContentFragment",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "fragment",
+      "type": null
+    }],
+    "returns": null
+  }, {
+    "name": "renderCardHeader",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "cardContent",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "renderCardImage",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "renderCardYoutubeVideo",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }],
+  "displayName": "Card"
+};

@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "./node_modules/.bin/babel src --out-dir dist"
+    "build": "./node_modules/.bin/babel src --out-dir dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,21 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.6",
+    "@storybook/addon-docs": "^5.3.6",
+    "@storybook/addon-links": "^5.3.6",
+    "@storybook/addons": "^5.3.6",
+    "@storybook/react": "^5.3.6",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-docgen": "^4.1.0",
     "jest": "^24.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-is": "^16.12.0",
     "react-test-renderer": "^16.12.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }

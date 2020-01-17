@@ -7,5 +7,6 @@ module.exports = {
   ignore: [
     "**/*.test.js",
     "**/*.spec.js"
-  ]
+  ],
+  plugins: ["react-docgen"]
 };

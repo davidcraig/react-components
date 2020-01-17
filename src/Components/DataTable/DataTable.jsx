@@ -1,5 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
+/**
+ * This component creates a tabular view of a data set given some items and optional columns
+ */
 class DataTable extends React.Component {
   getColumns () {
     let cols = this.props.columns
@@ -101,8 +105,32 @@ class DataTable extends React.Component {
     )
   }
 }
+
+DataTable.propTypes = {
+
+  /**
+   * An array of columns (objects) with the following properties:
+   *
+   * - name: 'The display name of the column'
+   * - value: Either the key of a property on item to return or a function returning the value
+   */
+  columns: {
+    type: PropTypes.array,
+  },
+  /**
+   * The items to be shown in the table.
+   */
+  items: {
+    type: PropTypes.array,
+    required: true
+  }
+}
+
 DataTable.defaultProps = {
-  primaryKey: 'id'
+  /**
+   * Default item key, change this if your items do not have an ID.
+   */
+  primaryKey: 'id' // Primary Key
 }
 
 export default DataTable

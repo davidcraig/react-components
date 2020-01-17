@@ -161,7 +161,78 @@ function (_React$Component) {
 
 exports.DataTable = DataTable;
 DataTable.defaultProps = {
+  /**
+    Default item key, change this if your items do not have an ID.
+   */
   primaryKey: 'id'
+};
+DataTable.__docgenInfo = {
+  "description": "",
+  "methods": [{
+    "name": "getColumns",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "getImplicitColumns",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "renderColumnHeadings",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "getFieldKey",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "item",
+      "type": null
+    }, {
+      "name": "column",
+      "type": null
+    }],
+    "returns": null
+  }, {
+    "name": "renderField",
+    "docblock": null,
+    "modifiers": [],
+    "params": [{
+      "name": "item",
+      "type": null
+    }, {
+      "name": "column",
+      "type": null
+    }],
+    "returns": null
+  }, {
+    "name": "renderData",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }, {
+    "name": "tableClasses",
+    "docblock": null,
+    "modifiers": [],
+    "params": [],
+    "returns": null
+  }],
+  "displayName": "DataTable",
+  "props": {
+    "primaryKey": {
+      "defaultValue": {
+        "value": "'id'",
+        "computed": false
+      },
+      "required": false
+    }
+  }
 };
 var _default = DataTable;
 exports["default"] = _default;
