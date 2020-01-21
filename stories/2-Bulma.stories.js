@@ -1,12 +1,14 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Card } from '../src/Components/Bulma/Card/Card';
-import 'bulma/css/bulma.css';
 
 export default {
   title: 'Bulma',
   component: Card,
 };
+
+let componentWrap = {
+  padding: '16px 0'
+}
 
 export const Default = () => (
   <>
@@ -17,9 +19,9 @@ export const Default = () => (
 export const BulmaCard = () => (
   <>
     <h2>Simple Card (Title and Content)</h2>
-    <pre><code style={{ marginBottom: '4px' }}>{`<Card title="Test">This is card Content</Card>`}</code></pre>
+    <code>{`<Card title="Test">This is card Content</Card>`}</code>
 
-    <div style={{ padding: '16px 0' }}>
+    <div style={componentWrap}>
       <Card title="Test">This is card Content</Card>
     </div>
   </>
