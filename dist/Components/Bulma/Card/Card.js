@@ -7,7 +7,7 @@ exports.Card = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _link = _interopRequireDefault(require("next/link"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -68,7 +68,7 @@ function (_React$Component) {
       fragments.linkCard = '';
 
       if (typeof this.props.url !== 'undefined') {
-        fragments.linkCard = _react["default"].createElement(_link["default"], {
+        fragments.linkCard = _react["default"].createElement("a", {
           href: link
         }, fragments.card);
       }
@@ -168,6 +168,14 @@ function (_React$Component) {
 }(_react["default"].Component);
 
 exports.Card = Card;
+Card.propTypes = {
+  /**
+   * Card Title
+   */
+  title: {
+    type: _propTypes["default"].string
+  }
+};
 Card.__docgenInfo = {
   "description": "",
   "methods": [{
@@ -210,5 +218,15 @@ Card.__docgenInfo = {
     "params": [],
     "returns": null
   }],
-  "displayName": "Card"
+  "displayName": "Card",
+  "props": {
+    "title": {
+      "type": {
+        "name": "custom",
+        "raw": "{\n  type: PropTypes.string,\n}"
+      },
+      "required": false,
+      "description": "Card Title"
+    }
+  }
 };

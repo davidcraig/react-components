@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from '../src/Components/Bulma/Card/Card';
+import { TabbedContent } from '../src/Components/Bulma/TabbedContent/TabbedContent';
 
 export default {
   title: 'Bulma',
@@ -23,6 +24,17 @@ export const BulmaCard = () => (
 
     <div style={componentWrap}>
       <Card title="Test">This is card Content</Card>
+    </div>
+  </>
+)
+
+export const BulmaTabbedContent = () => (
+  <>
+    <h2>TabbedContent</h2>
+    <code>{`<Card title="Test">This is card Content</Card>`}</code>
+
+    <div style={componentWrap}>
+      <TabbedContent></TabbedContent>
     </div>
   </>
 )

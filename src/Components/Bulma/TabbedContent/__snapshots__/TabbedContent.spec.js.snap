@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders as expected 1`] = `
+Array [
+  <div
+    className="tabs"
+  >
+    <ul>
+      <li
+        className="is-active"
+      >
+        Tab 1
+      </li>
+      <li>
+        <a
+          data-tab="1"
+          onClick={[Function]}
+        >
+          Tab 2
+        </a>
+      </li>
+    </ul>
+  </div>,
+  "Tab 1 Content",
+]
+`;

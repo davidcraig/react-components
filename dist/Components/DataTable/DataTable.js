@@ -7,6 +7,8 @@ exports.DataTable = exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -27,6 +29,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+/**
+ * This component creates a tabular view of a data set given some items and optional columns
+ */
 var DataTable =
 /*#__PURE__*/
 function (_React$Component) {
@@ -160,14 +165,38 @@ function (_React$Component) {
 }(_react["default"].Component);
 
 exports.DataTable = DataTable;
-DataTable.defaultProps = {
+DataTable.propTypes = {
   /**
-    Default item key, change this if your items do not have an ID.
+   * An array of columns (objects) with the following properties:
+   *
+   * - name: 'The display name of the column'
+   * - field: Either the key of a property on item to return or a function returning the value
    */
+  columns: {
+    type: _propTypes["default"].array
+  },
+
+  /**
+   * An array of data items to be shown in the table
+   */
+  items: {
+    type: _propTypes["default"].array,
+    required: true
+  },
+
+  /**
+   * Primary key, required for looping through each object (sets react's `key`).
+   */
+  primaryKey: {
+    type: _propTypes["default"].string,
+    required: false
+  }
+};
+DataTable.defaultProps = {
   primaryKey: 'id'
 };
 DataTable.__docgenInfo = {
-  "description": "",
+  "description": "This component creates a tabular view of a data set given some items and optional columns",
   "methods": [{
     "name": "getColumns",
     "docblock": null,
@@ -230,7 +259,28 @@ DataTable.__docgenInfo = {
         "value": "'id'",
         "computed": false
       },
-      "required": false
+      "type": {
+        "name": "custom",
+        "raw": "{\n  type: PropTypes.string,\n  required: false\n}"
+      },
+      "required": false,
+      "description": "Primary key, required for looping through each object (sets react's `key`)."
+    },
+    "columns": {
+      "type": {
+        "name": "custom",
+        "raw": "{\n  type: PropTypes.array,\n}"
+      },
+      "required": false,
+      "description": "An array of columns (objects) with the following properties:\n\n- name: 'The display name of the column'\n- field: Either the key of a property on item to return or a function returning the value"
+    },
+    "items": {
+      "type": {
+        "name": "custom",
+        "raw": "{\n  type: PropTypes.array,\n  required: true\n}"
+      },
+      "required": false,
+      "description": "An array of data items to be shown in the table"
     }
   }
 };
