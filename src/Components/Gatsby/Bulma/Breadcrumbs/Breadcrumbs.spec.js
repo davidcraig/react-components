@@ -1,6 +1,6 @@
 // Link.react.test.js
 import React from 'react'
-import { Breadcrumb } from './Breadcrumb'
+import { Breadcrumb } from './Breadcrumbs'
 import renderer from 'react-test-renderer'
 
 function renderBreadcrumb () {
