@@ -10,7 +10,7 @@ function renderBreadcrumb () {
   return component
 }
 
-test('DataTable works when fields are simple strings', () => {
+test('Breadcrumb renders as expected', () => {
   const component = renderBreadcrumb()
 
   expect(component.toJSON()).toMatchSnapshot()
