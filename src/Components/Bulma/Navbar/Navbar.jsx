@@ -13,14 +13,8 @@ export function Brand (props) {
   </div>
 }
 Brand.propTypes = {
-  title: {
-    type: PropTypes.string,
-    required: true
-  },
-  href: {
-    type: PropTypes.string,
-    required: false
-  }
+  title: PropTypes.string.isRequired,
+  href: PropTypes.string
 }
 
 /**
@@ -41,11 +35,8 @@ export function Dropdown (props) {
   </div>
 }
 Dropdown.propTypes = {
-  children: {},
-  title: {
-    type: PropTypes.string,
-    required: true
-  }
+  children: PropTypes.any,
+  title: PropTypes.string.isRequired
 }
 
 /**
@@ -59,7 +50,7 @@ export function End (props) {
   </div>
 }
 End.propTypes = {
-  children: {}
+  children: PropTypes.any
 }
 
 /**
@@ -73,7 +64,7 @@ export function Start (props) {
   </div>
 }
 Start.propTypes = {
-  children: {}
+  children: PropTypes.any
 }
 
 /**
@@ -86,33 +77,23 @@ export function Item (props) {
   return <a href={props.href} className={`navbar-item ${props.className}`}>{props.title}</a>
 }
 Item.propTypes = {
-  title: {
-    type: PropTypes.string,
-    required: true
-  },
-  className: {
-    type: PropTypes.string,
-    required: false
-  },
-  href: {
-    type: PropTypes.string,
-    required: true
-  }
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  href: PropTypes.string.isRequired
 }
 
 /**
  * Navbar
  * @param {*} props
  */
-export default function Navbar (props) {
+export function Navbar (props) {
   return <div className={props.dark ? 'navbar is-dark' : 'navbar'}>
     {props.children}
   </div>
 }
 Navbar.propTypes = {
-  children: {},
-  dark: {
-    type: PropTypes.boolean,
-    required: false
-  }
+  children: PropTypes.any,
+  dark: PropTypes.bool
 }
+
+export default Navbar

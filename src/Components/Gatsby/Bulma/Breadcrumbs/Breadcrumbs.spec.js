@@ -3,15 +3,16 @@ import React from 'react'
 import { Breadcrumb } from './Breadcrumbs'
 import renderer from 'react-test-renderer'
 
-function renderBreadcrumb () {
-  const component = renderer.create(
-    <Breadcrumb></Breadcrumb>
-  )
-  return component
-}
+beforeEach(() => {
+  global.___loader = {
+    enqueue: jest.fn()
+  }
+})
 
 test('Breadcrumb renders as expected', () => {
-  const component = renderBreadcrumb()
+  const component = renderer.create(
+    <Breadcrumb title='Test Breadcrumb' href='/'></Breadcrumb>
+  )
 
   expect(component.toJSON()).toMatchSnapshot()
 })

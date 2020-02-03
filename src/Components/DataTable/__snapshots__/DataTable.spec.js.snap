@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataTable renders headers, but no items if no items are passed 1`] = `
-<table
-  className="table"
->
-  <thead>
-    <tr>
-      <th>
-        Title
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</table>
-`;
-
 exports[`DataTable works when fields are a mix of strings and getter functions 1`] = `
 <table
   className="table"

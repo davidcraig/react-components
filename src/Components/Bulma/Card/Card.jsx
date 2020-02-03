@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 export class Card extends React.Component {
   getLink () {
@@ -9,13 +9,13 @@ export class Card extends React.Component {
   }
 
   getContentFragment (fragment) {
-    let image = this.renderCardImage()
-    let video = this.renderCardYoutubeVideo()
-    let header = this.renderCardHeader()
-    let content = this.cardContent()
-    let link = this.getLink()
+    const image = this.renderCardImage()
+    const video = this.renderCardYoutubeVideo()
+    const header = this.renderCardHeader()
+    const content = this.cardContent()
+    const link = this.getLink()
 
-    let fragments = {
+    const fragments = {
       card: (
         <div className='card'>
           {image}
@@ -52,7 +52,6 @@ export class Card extends React.Component {
   }
 
   renderCardHeader () {
-    let meta
     let title = ''
     let header
     if (typeof this.props.title !== 'undefined') {
@@ -64,7 +63,7 @@ export class Card extends React.Component {
       date = this.props.date
     }
 
-    meta = (
+    const meta = (
       <>
         <i />{date}
       </>
@@ -89,7 +88,7 @@ export class Card extends React.Component {
 
   cardContent () {
     if (this.props.children) {
-      let content = this.props.children
+      const content = this.props.children
       return (
         <div className='card-content'>
           {content}
@@ -100,17 +99,17 @@ export class Card extends React.Component {
 
   renderCardImage () {
     if (typeof this.props.image !== 'undefined') {
-      let title = this.props.title || ''
+      const title = this.props.title || ''
       return <img src={this.props.image} alt={title} />
     }
     return ''
   }
 
   renderCardYoutubeVideo () {
-    let height = this.props.videoHeight || '175px'
+    const height = this.props.videoHeight || '175px'
 
     if (typeof this.props.ytVideo !== 'undefined') {
-      let video = 'https://www.youtube.com/embed/' + this.props.ytVideo
+      const video = 'https://www.youtube.com/embed/' + this.props.ytVideo
       return (
         <iframe width='100%' height={height} src={video} frameBorder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
@@ -120,13 +119,37 @@ export class Card extends React.Component {
     return ''
   }
 }
-
 Card.propTypes = {
-
+  children: PropTypes.any,
+  /**
+   * Date (Meta Tag)
+   */
+  date: PropTypes.string,
+  /**
+   * Image.
+   * URL of image if image card.
+   */
+  image: PropTypes.string,
   /**
    * Card Title
    */
-  title: {
-    type: PropTypes.string,
-  },
+  title: PropTypes.string,
+  /**
+   * URL
+   * Clicking on the card will go to this location.
+   */
+  url: PropTypes.string,
+  /**
+   * Video Height
+   * Used if rendering a video.
+   * Format: '180px'.
+   */
+  videoHeight: PropTypes.string,
+  /**
+   * YouTube Video
+   * ID of youtube video
+   */
+  ytVideo: PropTypes.string
 }
+
+export default Card

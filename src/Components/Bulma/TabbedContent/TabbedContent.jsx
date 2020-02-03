@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
  * @param {string} props.content[].title - Tab title.
  * @param {any} props.content[].content - Tab content.
  */
-export default class TabbedContent extends React.Component {
+ export class TabbedContent extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -59,7 +59,12 @@ export default class TabbedContent extends React.Component {
   }
 }
 TabbedContent.propTypes = {
-  content: {
-    type: PropTypes.array
-  }
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired
+    })
+  )
 }
+
+export default TabbedContent

@@ -3,15 +3,10 @@ import React from 'react'
 import { Breadcrumb } from './Breadcrumbs'
 import renderer from 'react-test-renderer'
 
-function renderBreadcrumb () {
-  const component = renderer.create(
-    <Breadcrumb></Breadcrumb>
-  )
-  return component
-}
-
 test('Breadcrumb renders as expected', () => {
-  const component = renderBreadcrumb()
+  const component = renderer.create(
+    <Breadcrumb href='/' name='Home'></Breadcrumb>
+  )
 
   expect(component.toJSON()).toMatchSnapshot()
 })

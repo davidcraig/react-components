@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 /**
  * This component creates a tabular view of a data set given some items and optional columns
  */
-class DataTable extends React.Component {
+export class DataTable extends React.Component {
   getColumns () {
     let cols = this.props.columns
     if (!cols) {
@@ -106,45 +106,28 @@ class DataTable extends React.Component {
 }
 
 DataTable.propTypes = {
-
   /**
    * An array of columns (objects) with the following properties:
    *
    * - name: 'The display name of the column'
    * - field: Either the key of a property on item to return or a function returning the value
    */
-  columns: {
-    type: PropTypes.array
-  },
-
+  columns: PropTypes.array,
   /**
    * An array of data items to be shown in the table
    */
-  items: {
-    type: PropTypes.array,
-    required: true
-  },
-
+  items: PropTypes.array.isRequired,
   /**
    * Allows css classes to be passed in to be used in the component.
    */
-  classes: {
-    type: PropTypes.array,
-    required: false
-  },
-
+  classes: PropTypes.array,
   /**
    * Primary key, required for looping through each object (sets react's `key`).
    */
-  primaryKey: {
-    type: PropTypes.string,
-    required: false
-  }
+  primaryKey: PropTypes.string
 }
-
 DataTable.defaultProps = {
   primaryKey: 'id'
 }
 
 export default DataTable
-export { DataTable }

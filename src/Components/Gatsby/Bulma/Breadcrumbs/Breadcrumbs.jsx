@@ -2,30 +2,24 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
+export function ActiveBreadcrumb (props) {
+  return <li className='is-active' key={`${props.name}-breadcrumb`}><a href='#' aria-current='page'>{props.name}</a></li>
+}
+ActiveBreadcrumb.propTypes = {
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired
+}
+
 /**
  * Breadcrumb (Gatsby + Bulma)
  * @param {*} props
  */
 export function Breadcrumb (props) {
-  if (props.active) {
-    return <li className='is-active' key={`${props.name}-breadcrumb`}><a href='#' aria-current='page'>{props.name}</a></li>
-  }
-  return <li key={`${props.name}-breadcrumb`}><Link to={props.href}><a>{props.name}</a></Link></li>
+  return <li key={`${props.title}-breadcrumb`}><Link to={props.href}><a>{props.title}</a></Link></li>
 }
-
 Breadcrumb.propTypes = {
-  active: {
-    type: PropTypes.boolean,
-    required: false
-  },
-  name: {
-    type: PropTypes.string,
-    required: true
-  },
-  href: {
-    type: PropTypes.string,
-    required: false
-  }
+  title: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired
 }
 
 /**
@@ -37,13 +31,9 @@ export function Breadcrumbs (props) {
     <ul>{props.children}</ul>
   </nav>
 }
-
 Breadcrumbs.propTypes = {
-  children: {
-
-  }
+  children: PropTypes.any
 }
-
 Breadcrumbs.defaultProps = {
   class: 'has-succeeds-seperator'
 }
