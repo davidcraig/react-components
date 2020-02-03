@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DataTable = exports["default"] = void 0;
+exports["default"] = exports.DataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,7 +60,7 @@ function (_React$Component) {
     value: function getImplicitColumns() {
       var columns = {};
 
-      if (typeof this.props.items != 'undefined') {
+      if (typeof this.props.items !== 'undefined') {
         this.props.items.map(function (i) {
           Object.keys(i).map(function (col) {
             if (typeof columns[col] === 'undefined') {
@@ -83,7 +83,9 @@ function (_React$Component) {
     key: "renderColumnHeadings",
     value: function renderColumnHeadings() {
       var cols = this.getColumns();
-      return _react["default"].createElement("tr", null, cols.map(function (c) {
+      return _react["default"].createElement("tr", {
+        key: "headings"
+      }, cols.map(function (c) {
         return _react["default"].createElement("th", {
           key: c.field
         }, c.name);
@@ -172,25 +174,22 @@ DataTable.propTypes = {
    * - name: 'The display name of the column'
    * - field: Either the key of a property on item to return or a function returning the value
    */
-  columns: {
-    type: _propTypes["default"].array
-  },
+  columns: _propTypes["default"].array,
 
   /**
    * An array of data items to be shown in the table
    */
-  items: {
-    type: _propTypes["default"].array,
-    required: true
-  },
+  items: _propTypes["default"].array.isRequired,
+
+  /**
+   * Allows css classes to be passed in to be used in the component.
+   */
+  classes: _propTypes["default"].array,
 
   /**
    * Primary key, required for looping through each object (sets react's `key`).
    */
-  primaryKey: {
-    type: _propTypes["default"].string,
-    required: false
-  }
+  primaryKey: _propTypes["default"].string
 };
 DataTable.defaultProps = {
   primaryKey: 'id'
@@ -260,27 +259,31 @@ DataTable.__docgenInfo = {
         "computed": false
       },
       "type": {
-        "name": "custom",
-        "raw": "{\n  type: PropTypes.string,\n  required: false\n}"
+        "name": "string"
       },
       "required": false,
       "description": "Primary key, required for looping through each object (sets react's `key`)."
     },
     "columns": {
       "type": {
-        "name": "custom",
-        "raw": "{\n  type: PropTypes.array,\n}"
+        "name": "array"
       },
       "required": false,
       "description": "An array of columns (objects) with the following properties:\n\n- name: 'The display name of the column'\n- field: Either the key of a property on item to return or a function returning the value"
     },
     "items": {
       "type": {
-        "name": "custom",
-        "raw": "{\n  type: PropTypes.array,\n  required: true\n}"
+        "name": "array"
+      },
+      "required": true,
+      "description": "An array of data items to be shown in the table"
+    },
+    "classes": {
+      "type": {
+        "name": "array"
       },
       "required": false,
-      "description": "An array of data items to be shown in the table"
+      "description": "Allows css classes to be passed in to be used in the component."
     }
   }
 };

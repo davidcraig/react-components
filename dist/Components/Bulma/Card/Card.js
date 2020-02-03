@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Card = void 0;
+exports["default"] = exports.Card = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -92,7 +92,6 @@ function (_React$Component) {
   }, {
     key: "renderCardHeader",
     value: function renderCardHeader() {
-      var meta;
       var title = '';
       var header;
 
@@ -106,7 +105,7 @@ function (_React$Component) {
         date = this.props.date;
       }
 
-      meta = _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("i", null), date);
+      var meta = _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("i", null), date);
 
       if (typeof this.props.title !== 'undefined') {
         header = _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", {
@@ -169,12 +168,42 @@ function (_React$Component) {
 
 exports.Card = Card;
 Card.propTypes = {
+  children: _propTypes["default"].any,
+
+  /**
+   * Date (Meta Tag)
+   */
+  date: _propTypes["default"].string,
+
+  /**
+   * Image.
+   * URL of image if image card.
+   */
+  image: _propTypes["default"].string,
+
   /**
    * Card Title
    */
-  title: {
-    type: _propTypes["default"].string
-  }
+  title: _propTypes["default"].string,
+
+  /**
+   * URL
+   * Clicking on the card will go to this location.
+   */
+  url: _propTypes["default"].string,
+
+  /**
+   * Video Height
+   * Used if rendering a video.
+   * Format: '180px'.
+   */
+  videoHeight: _propTypes["default"].string,
+
+  /**
+   * YouTube Video
+   * ID of youtube video
+   */
+  ytVideo: _propTypes["default"].string
 };
 Card.__docgenInfo = {
   "description": "",
@@ -220,13 +249,56 @@ Card.__docgenInfo = {
   }],
   "displayName": "Card",
   "props": {
+    "children": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": ""
+    },
+    "date": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Date (Meta Tag)"
+    },
+    "image": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Image.\nURL of image if image card."
+    },
     "title": {
       "type": {
-        "name": "custom",
-        "raw": "{\n  type: PropTypes.string,\n}"
+        "name": "string"
       },
       "required": false,
       "description": "Card Title"
+    },
+    "url": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "URL\nClicking on the card will go to this location."
+    },
+    "videoHeight": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Video Height\nUsed if rendering a video.\nFormat: '180px'."
+    },
+    "ytVideo": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "YouTube Video\nID of youtube video"
     }
   }
 };
+var _default = Card;
+exports["default"] = _default;

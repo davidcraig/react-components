@@ -8,11 +8,13 @@ exports.Breadcrumbs = Breadcrumbs;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * Breadcrumb (Bulma)
- * @param {*} props 
+ * @param {*} props
  */
 function Breadcrumb(props) {
   if (props.active) {
@@ -31,11 +33,16 @@ function Breadcrumb(props) {
     href: props.href
   }, props.name));
 }
+
+Breadcrumb.propTypes = {
+  active: _propTypes["default"].bool,
+  name: _propTypes["default"].string.isRequired,
+  href: _propTypes["default"].string
+};
 /**
  * Breadcrumbs (Bulma)
- * @param {*} props 
+ * @param {*} props
  */
-
 
 function Breadcrumbs(props) {
   return _react["default"].createElement("nav", {
@@ -44,13 +51,39 @@ function Breadcrumbs(props) {
   }, _react["default"].createElement("ul", null, props.children));
 }
 
+Breadcrumbs.propTypes = {
+  children: _propTypes["default"].any
+};
 Breadcrumbs.defaultProps = {
   "class": 'has-succeeds-seperator'
 };
 Breadcrumb.__docgenInfo = {
   "description": "Breadcrumb (Bulma)\n@param {*} props",
   "methods": [],
-  "displayName": "Breadcrumb"
+  "displayName": "Breadcrumb",
+  "props": {
+    "active": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": ""
+    },
+    "name": {
+      "type": {
+        "name": "string"
+      },
+      "required": true,
+      "description": ""
+    },
+    "href": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": ""
+    }
+  }
 };
 Breadcrumbs.__docgenInfo = {
   "description": "Breadcrumbs (Bulma)\n@param {*} props",
@@ -63,6 +96,13 @@ Breadcrumbs.__docgenInfo = {
         "computed": false
       },
       "required": false
+    },
+    "children": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": ""
     }
   }
 };

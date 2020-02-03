@@ -3,9 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.TabbedContent = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -113,7 +115,13 @@ function (_React$Component) {
   return TabbedContent;
 }(_react["default"].Component);
 
-exports["default"] = TabbedContent;
+exports.TabbedContent = TabbedContent;
+TabbedContent.propTypes = {
+  content: _propTypes["default"].arrayOf(_propTypes["default"].shape({
+    title: _propTypes["default"].string.isRequired,
+    content: _propTypes["default"].string.isRequired
+  }))
+};
 TabbedContent.__docgenInfo = {
   "description": "TabbedContent\n\n@param {Object} props\n@param {Object[]} props.content - Array of tabs/content.\n@param {string} props.content[].title - Tab title.\n@param {any} props.content[].content - Tab content.",
   "methods": [{
@@ -144,5 +152,29 @@ TabbedContent.__docgenInfo = {
     "params": [],
     "returns": null
   }],
-  "displayName": "TabbedContent"
+  "displayName": "TabbedContent",
+  "props": {
+    "content": {
+      "type": {
+        "name": "arrayOf",
+        "value": {
+          "name": "shape",
+          "value": {
+            "title": {
+              "name": "string",
+              "required": true
+            },
+            "content": {
+              "name": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "required": false,
+      "description": ""
+    }
+  }
 };
+var _default = TabbedContent;
+exports["default"] = _default;
