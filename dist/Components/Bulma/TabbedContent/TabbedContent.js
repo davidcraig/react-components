@@ -29,12 +29,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 /**
  * TabbedContent
- * 
- * Props:
- * Content (array) {
- *  title: tabtitle
- *  content: Content for the tab.
- * }
+ *
+ * @param {Object} props
+ * @param {Object[]} props.content - Array of tabs/content.
+ * @param {string} props.content[].title - Tab title.
+ * @param {any} props.content[].content - Tab content.
  */
 var TabbedContent =
 /*#__PURE__*/
@@ -116,7 +115,7 @@ function (_React$Component) {
 
 exports["default"] = TabbedContent;
 TabbedContent.__docgenInfo = {
-  "description": "TabbedContent\n\nProps:\nContent (array) {\n title: tabtitle\n content: Content for the tab.\n}",
+  "description": "TabbedContent\n\n@param {Object} props\n@param {Object[]} props.content - Array of tabs/content.\n@param {string} props.content[].title - Tab title.\n@param {any} props.content[].content - Tab content.",
   "methods": [{
     "name": "setDefaultTab",
     "docblock": null,

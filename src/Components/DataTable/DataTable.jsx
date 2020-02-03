@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 /**
  * This component creates a tabular view of a data set given some items and optional columns
@@ -15,8 +15,8 @@ class DataTable extends React.Component {
   }
 
   getImplicitColumns () {
-    let columns = {}
-    if (typeof this.props.items != 'undefined') {
+    const columns = {}
+    if (typeof this.props.items !== 'undefined') {
       this.props.items.map(i => {
         Object.keys(i).map(col => {
           if (typeof columns[col] === 'undefined') {
@@ -28,9 +28,8 @@ class DataTable extends React.Component {
         })
       })
     }
-    
 
-    let columnArray = []
+    const columnArray = []
     Object.keys(columns).map(col => {
       columnArray.push(columns[col])
     })
@@ -39,7 +38,7 @@ class DataTable extends React.Component {
   }
 
   renderColumnHeadings () {
-    let cols = this.getColumns()
+    const cols = this.getColumns()
 
     return <tr>{cols.map(c => {
       return <th key={c.field}>{c.name}</th>
@@ -51,7 +50,7 @@ class DataTable extends React.Component {
   }
 
   renderField (item, column) {
-    let key = this.getFieldKey(item, column)
+    const key = this.getFieldKey(item, column)
     if (typeof column.field === 'function') {
       return <td key={key}>{column.field(item)}</td>
     }
@@ -60,8 +59,8 @@ class DataTable extends React.Component {
   }
 
   renderData () {
-    let items = this.props.items
-    let columns = this.getColumns()
+    const items = this.props.items
+    const columns = this.getColumns()
     if (!items || !columns) {
       return ''
     }
@@ -83,7 +82,7 @@ class DataTable extends React.Component {
   }
 
   tableClasses () {
-    let classNames = ['table']
+    const classNames = ['table']
     if (typeof this.props.classes !== 'undefined') {
       this.props.classes.map(c => {
         classNames.push(c)
@@ -93,9 +92,9 @@ class DataTable extends React.Component {
   }
 
   render () {
-    let headings = this.renderColumnHeadings()
-    let data = this.renderData()
-    let tClass = this.tableClasses()
+    const headings = this.renderColumnHeadings()
+    const data = this.renderData()
+    const tClass = this.tableClasses()
 
     return (
       <table className={tClass}>
@@ -115,8 +114,9 @@ DataTable.propTypes = {
    * - field: Either the key of a property on item to return or a function returning the value
    */
   columns: {
-    type: PropTypes.array,
+    type: PropTypes.array
   },
+
   /**
    * An array of data items to be shown in the table
    */
@@ -124,6 +124,15 @@ DataTable.propTypes = {
     type: PropTypes.array,
     required: true
   },
+
+  /**
+   * Allows css classes to be passed in to be used in the component.
+   */
+  classes: {
+    type: PropTypes.array,
+    required: false
+  },
+
   /**
    * Primary key, required for looping through each object (sets react's `key`).
    */

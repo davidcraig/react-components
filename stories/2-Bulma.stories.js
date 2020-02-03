@@ -1,17 +1,17 @@
-import React from 'react';
-import { Card } from '../src/Components/Bulma/Card/Card';
-import { TabbedContent } from '../src/Components/Bulma/TabbedContent/TabbedContent';
+import React from 'react'
+import { Card } from '../src/Components/Bulma/Card/Card'
+import TabbedContent from '../src/Components/Bulma/TabbedContent/TabbedContent'
 
 export default {
   title: 'Bulma',
-  component: Card,
-};
+  component: Card
+}
 
-let componentWrap = {
+const componentWrap = {
   padding: '16px 0'
 }
 
-export const Default = () => (
+export const Bulma = () => (
   <>
     <h2>Bulma Components</h2>
   </>
@@ -20,7 +20,7 @@ export const Default = () => (
 export const BulmaCard = () => (
   <>
     <h2>Simple Card (Title and Content)</h2>
-    <code>{`<Card title="Test">This is card Content</Card>`}</code>
+    <code>{'<Card title="Test">This is card Content</Card>'}</code>
 
     <div style={componentWrap}>
       <Card title="Test">This is card Content</Card>
@@ -31,10 +31,10 @@ export const BulmaCard = () => (
 export const BulmaTabbedContent = () => (
   <>
     <h2>TabbedContent</h2>
-    <code>{`<Card title="Test">This is card Content</Card>`}</code>
+    <code>{'<Card title="Test">This is card Content</Card>'}</code>
 
     <div style={componentWrap}>
-      <TabbedContent></TabbedContent>
+      <TabbedContent content={[{ title: 'Tab 1', content: 'Tab 1 Content' }]}></TabbedContent>
     </div>
   </>
 )

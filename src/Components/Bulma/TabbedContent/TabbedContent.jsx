@@ -1,13 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * TabbedContent
- * 
- * Props:
- * Content (array) {
- *  title: tabtitle
- *  content: Content for the tab.
- * }
+ *
+ * @param {Object} props
+ * @param {Object[]} props.content - Array of tabs/content.
+ * @param {string} props.content[].title - Tab title.
+ * @param {any} props.content[].content - Tab content.
  */
 export default class TabbedContent extends React.Component {
   constructor (props) {
@@ -23,12 +23,12 @@ export default class TabbedContent extends React.Component {
   }
 
   changeTab (e) {
-    let key = e.target.attributes['data-tab'].value
+    const key = e.target.attributes['data-tab'].value
     this.setState({ activeTab: key })
   }
 
   renderTabs () {
-    let content = this.props.content
+    const content = this.props.content
     return Object.keys(content).map(key => {
       if (key === this.state.activeTab) {
         return <li key={key} className='is-active'>{content[key].title}</li>
@@ -39,14 +39,14 @@ export default class TabbedContent extends React.Component {
   }
 
   renderActiveTabContent () {
-    let tabKey = this.state.activeTab
+    const tabKey = this.state.activeTab
     return this.props.content[tabKey].content
   }
 
   render () {
     if (Object.keys(this.props.content).length > 0) {
-      let tabs = <div className='tabs'><ul>{this.renderTabs()}</ul></div>
-      let content = this.renderActiveTabContent()
+      const tabs = <div className='tabs'><ul>{this.renderTabs()}</ul></div>
+      const content = this.renderActiveTabContent()
 
       return (
         <>
@@ -56,5 +56,10 @@ export default class TabbedContent extends React.Component {
       )
     }
     return ''
+  }
+}
+TabbedContent.propTypes = {
+  content: {
+    type: PropTypes.array
   }
 }
