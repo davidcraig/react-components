@@ -4,6 +4,9 @@
 ### Added
  - ESLint + configuration.
 
+### Fixed
+ - Fix all current tests.
+
 ## v0.1.2
 ### Added
  - Component: Bulma TabbedContent.
