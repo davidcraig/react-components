@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
  * @param {string} props.content[].title - Tab title.
  * @param {any} props.content[].content - Tab content.
  */
- export class TabbedContent extends React.Component {
+export class TabbedContent extends React.Component {
   constructor (props) {
     super(props)
     this.state = {

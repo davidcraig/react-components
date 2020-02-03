@@ -40,7 +40,7 @@ export class DataTable extends React.Component {
   renderColumnHeadings () {
     const cols = this.getColumns()
 
-    return <tr>{cols.map(c => {
+    return <tr key='headings'>{cols.map(c => {
       return <th key={c.field}>{c.name}</th>
     })}</tr>
   }
