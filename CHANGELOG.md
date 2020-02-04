@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.4
+### Fixed
+ - Forgot to run babel build before tagging previous version.
+
 ## v0.1.3
 ### Added
  - ESLint + configuration.
