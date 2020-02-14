@@ -14,6 +14,7 @@ const componentWrap = {
 export const Bulma = () => (
   <>
     <h2>Bulma Components</h2>
+    <p>Bulma is a pure CSS framework (no JavaScript)</p>
   </>
 )
 

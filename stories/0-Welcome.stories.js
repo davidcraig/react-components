@@ -7,7 +7,14 @@ export default {
   component: Welcome
 }
 
-export const ToStorybook = () => <Welcome showApp={linkTo('Button')} />
+export const ToStorybook = () => (
+  <>
+    <h1>React Components</h1>
+
+    <h2>Installation</h2>
+    <pre><code>npm install @dcraig/react-components</code></pre>
+  </>
+)
 
 ToStorybook.story = {
   name: 'to Storybook'
